@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TBE</title>
+    <link rel="icon" href="images/tbeLogobebe.svg">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!--Librería de Ale-->
+    <link rel="stylesheet" href="style/style.css">
+    <!--Scroll chido-->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+    <!--AWS-->
+    <!--Escritorio-->
+    <script>
+        function submitToAPI(e) {
+            e.preventDefault();
+            var URL = "https://743e8ndpef.execute-api.us-east-1.amazonaws.com/ProjectTBE";
+
+            if ($("#fname").val() == "") {
+                alert("Please input a first name");
+                return;
+            }
+
+            if ($("#lname").val() == "") {
+                alert("Please input a last name");
+                return;
+            }
+
+            var mobilere = /[0-9]{10}/;
+            if (!mobilere.test($("#phone").val())) {
+                alert("Please enter valid mobile number");
+                return;
+            }
+            if ($("#email").val() == "") {
+                alert("Please enter your email id");
+                return;
+            }
+
+            var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            if (!reeamil.test($("#email").val())) {
+                alert("Please enter valid email address");
+                return;
+            }
+            if ($("#company").val() == "") {
+                alert("Please enter the company name");
+                return;
+            }
+            if ($("#tax").val() == "") {
+                alert("Please enter the Tax ID");
+                return;
+            }
+            if ($("#brand").val() == "") {
+                alert("Please enter the Brand");
+                return;
+            }
+            if ($("#industry").val() == "") {
+                alert("Please enter the Industry");
+                return;
+            }
+            if ($("#Country").val() == "") {
+                alert("Please enter the Country");
+                return;
+            }
+
+            if ($("#texto").val() == "") {
+                alert("Please tell us a little about what you need");
+                return;
+            }
+
+            if ($("#start").val() == "") {
+                alert("Please enter the Start Date");
+                return;
+            }
+
+            if ($("#delivery").val() == "") {
+                alert("Please enter the Delivery Date");
+                return;
+            }
+
+            var name = $("#fname").val() + " " + $("#lname").val();
+            var phone = $("#phone").val();
+            var email = $("#email").val();
+            var comp = $("#company").val();
+            var tax = $("#tax").val();
+            var brand = $("#brand").val();
+            var industry = $("#industry").val();
+            var country = $("#country").val();
+            var desc = $("#texto").val();
+            var start = $("#start").val();
+            var delivery = $("#delivery").val();
+
+//*la wea rara*//
+
+    var checkBox1 = document.getElementById("naming");
+    var checkBox2 = document.getElementById("newBrand");
+    var checkBox3 = document.getElementById("Rebrand");
+    var checkBox4 = document.getElementById("brandApplications");
+    var checkBox5 = document.getElementById("brandBook");
+    var checkBox6 = document.getElementById("socialMedia");
+    var checkBox7 = document.getElementById("packaging");
+    var checkBox8 = document.getElementById("signage");
+    var checkBox9 = document.getElementById("namingSystems");
+    var checkBox10 = document.getElementById("advertisement");
+    var checkBox11 = document.getElementById("presentation");
+    var checkBox12 = document.getElementById("catalog");
+    var checkBox13 = document.getElementById("infographic");
+    var checkBox14 = document.getElementById("illustration");
+    var checkBox15 = document.getElementById("iconography");
+    var checkBox16 = document.getElementById("photoManipulation");
+    var checkBox17 = document.getElementById("UIDesign");
+    var checkBox18 = document.getElementById("UXDesign");
+    var checkBox19 = document.getElementById("frontEnd");
+
+    
+
+//*la wea rara*//
+
+
+            /*Branding*/
+            if (checkBox1.checked == true) {
+                var naming = $("#naming").val();
+            }else{
+                var naming = "no";
+            }
+
+            if (checkBox2.checked == true) {
+                var newBrand = $("#newBrand").val();
+            }else{
+                var newBrand = "no";
+            }
+            
+            if (checkBox3.checked == true) {   
+                var Rebrand = $("#Rebrand").val();
+            }else{
+                var Rebrand = "no";
+            }
+            
+            if (checkBox4.checked == true) {   
+                var brandApplications = $("#brandApplications").val();
+            }else{
+                var brandApplications = "no";
+            }
+            
+            if (checkBox5.checked == true) {   
+                var brandBook = $("#brandBook").val();
+            }else{
+                var brandBook = "no";
+            }
+            
+            if (checkBox6.checked == true){   
+                var socialMedia = $("#socialMedia").val();
+            }else{
+                var socialMedia = "no";
+            }
+            
+            if (checkBox7.checked == true){   
+                var packaging = $("#packaging").val();
+            }else{
+                var packaging = "no";
+            }
+            
+            if (checkBox8.checked == true){   
+                var signage = $("#signage").val();
+            }else{
+                var signage = "no";
+            }
+            
+            if (checkBox9.checked == true){   
+                var namingSystems = $("#namingSystems").val();
+            }else{
+                var namingSystems = "no";
+            }
+            
+            /*Graphic Design*/
+            if (checkBox10.checked == true){   
+                var advertisement = $("#advertisement").val();
+            }else{
+                var advertisement = "no";
+            }
+            
+            if (checkBox11.checked == true){   
+                var presentation = $("#presentation").val();
+            }else{
+                var presentation = "no";
+            }
+            
+            if (checkBox12.checked == true){   
+                var catalog = $("#catalog").val();
+            }else{
+                var catalog = "no";
+            }
+            
+            if (checkBox13.checked == true){   
+                var infographic = $("#infographic").val();
+            }else{
+                var infographic = "no";
+            }
+            
+            if (checkBox14.checked == true){   
+                var illustration = $("#illustration").val();
+            }else{
+                var illustration = "no";
+            }
+            
+            if (checkBox15.checked == true){   
+                var iconography = $("#iconography").val();
+            }else{
+                var iconography = "no";
+            }
+            
+            if (checkBox16.checked == true){   
+                var photoManipulation = $("#photoManipulation").val();
+            }else{
+                var photoManipulation = "no";
+            }
+            
+            /*Web Design*/
+            if (checkBox17.checked == true){   
+                var UIDesign = $("#UIDesign").val();
+            }else{
+                var UIDesign = "no";
+            }
+            
+            if (checkBox18.checked == true){   
+                var UXDesign = $("#UXDesign").val();
+            }else{
+                var UXDesign = "no";
+            }
+            
+            if (checkBox19.checked == true){   
+                var frontEnd = $("#frontEnd").val();
+            }else{
+                var frontEnd = "no";
+            }
+            
+
+            var data = {
+                Name: name,
+                Phone: phone,
+                Email: email,
+                Company: comp,
+                Tax: tax,
+                Brand: brand,
+                Industry: industry,
+                Countr: country,
+                Description: desc,
+                Start: start,
+                Delivery: delivery,
+                /**/
+                Naming: naming,
+                NewBrand: newBrand,
+                Rebrand: Rebrand,
+                BrandApplications: brandApplications,
+                BrandBook: brandBook,
+                SocialMedia: socialMedia,
+                Packaging: packaging,
+                Signage: signage,
+                NamingSystems: namingSystems,
+                /**/
+                Advertisement: advertisement,
+                Presentation: presentation,
+                Catalog: catalog,
+                Infographic: infographic,
+                Illustration: illustration,
+                Iconography: iconography,
+                PhotoManipulation: photoManipulation,
+                /**/
+                UIDesign: UIDesign,
+                UXDesign: UXDesign,
+                FrontEnd: frontEnd
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "https://743e8ndpef.execute-api.us-east-1.amazonaws.com/ProjectTBE",
+                dataType: "json",
+                crossDomain: "true",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+
+
+
+                //creo que aqui va lo del check de la respuesta del endpoint
+                success: function () {
+                    // clear form and show a success message
+                    alert("Thanks for contacting us. We will get in touch with you as soon as possible.");
+                    document.getElementById("contact-form").reset();
+                    location.reload();
+                },
+                error: function () {
+                    // show an error message
+                    alert("Thanks for contacting us. We will get in touch with you as soon as possible");
+                    document.getElementById("contact-form").reset();
+                    location.reload();
+                }
+            });
+        }
+    </script>
+
+    <!--Movil-->
+    <script>
+        function submitToAPIm(e) {
+            e.preventDefault();
+            var URL = "https://743e8ndpef.execute-api.us-east-1.amazonaws.com/ProjectTBE";
+
+            if ($("#fnamem").val() == "") {
+                alert("Please input a first name");
+                return;
+            }
+
+            if ($("#lnamem").val() == "") {
+                alert("Please input a last name");
+                return;
+            }
+
+            var mobilere = /[0-9]{10}/;
+            if (!mobilere.test($("#phonem").val())) {
+                alert("Please enter valid mobile number");
+                return;
+            }
+            if ($("#emailm").val() == "") {
+                alert("Please enter your email id");
+                return;
+            }
+
+            var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            if (!reeamil.test($("#emailm").val())) {
+                alert("Please enter valid email address");
+                return;
+            }
+            if ($("#companym").val() == "") {
+                alert("Please enter the company name");
+                return;
+            }
+            if ($("#taxm").val() == "") {
+                alert("Please enter the Tax ID");
+                return;
+            }
+            if ($("#brandm").val() == "") {
+                alert("Please enter the Brand");
+                return;
+            }
+            if ($("#industrym").val() == "") {
+                alert("Please enter the Industry");
+                return;
+            }
+            if ($("#Countrym").val() == "") {
+                alert("Please enter the Country");
+                return;
+            }
+
+            if ($("#textom").val() == "") {
+                alert("Please tell us a little about what you need");
+                return;
+            }
+
+            if ($("#startm").val() == "") {
+                alert("Please enter the Start Date");
+                return;
+            }
+
+            if ($("#deliverym").val() == "") {
+                alert("Please enter the Delivery Date");
+                return;
+            }
+
+            var name = $("#fnamem").val() + " " + $("#lnamem").val();
+            var phone = $("#phonem").val();
+            var email = $("#emailm").val();
+            var comp = $("#companym").val();
+            var tax = $("#taxm").val();
+            var brand = $("#brandm").val();
+            var industry = $("#industrym").val();
+            var country = $("#countrym").val();
+            var desc = $("#textom").val();
+            var start = $("#startm").val();
+            var delivery = $("#deliverym").val();
+
+//*la wea rara*//
+
+    var checkBox1 = document.getElementById("namingm");
+    var checkBox2 = document.getElementById("newBrandm");
+    var checkBox3 = document.getElementById("Rebrandm");
+    var checkBox4 = document.getElementById("brandApplicationsm");
+    var checkBox5 = document.getElementById("brandBookm");
+    var checkBox6 = document.getElementById("socialMediam");
+    var checkBox7 = document.getElementById("packagingm");
+    var checkBox8 = document.getElementById("signagem");
+    var checkBox9 = document.getElementById("namingSystemsm");
+    var checkBox10 = document.getElementById("advertisementm");
+    var checkBox11 = document.getElementById("presentationm");
+    var checkBox12 = document.getElementById("catalogm");
+    var checkBox13 = document.getElementById("infographicm");
+    var checkBox14 = document.getElementById("illustrationm");
+    var checkBox15 = document.getElementById("iconographym");
+    var checkBox16 = document.getElementById("photoManipulationm");
+    var checkBox17 = document.getElementById("UIDesignm");
+    var checkBox18 = document.getElementById("UXDesignm");
+    var checkBox19 = document.getElementById("frontEndm");
+
+    
+
+//*la wea rara*//
+
+
+            /*Branding*/
+            if (checkBox1.checked == true) {
+                var naming = $("#namingm").val();
+            }else{
+                var naming = "no";
+            }
+
+            if (checkBox2.checked == true) {
+                var newBrand = $("#newBrandm").val();
+            }else{
+                var newBrand = "no";
+            }
+            
+            if (checkBox3.checked == true) {   
+                var Rebrand = $("#Rebrandm").val();
+            }else{
+                var Rebrand = "no";
+            }
+            
+            if (checkBox4.checked == true) {   
+                var brandApplications = $("#brandApplicationsm").val();
+            }else{
+                var brandApplications = "no";
+            }
+            
+            if (checkBox5.checked == true) {   
+                var brandBook = $("#brandBookm").val();
+            }else{
+                var brandBook = "no";
+            }
+            
+            if (checkBox6.checked == true){   
+                var socialMedia = $("#socialMediam").val();
+            }else{
+                var socialMedia = "no";
+            }
+            
+            if (checkBox7.checked == true){   
+                var packaging = $("#packagingm").val();
+            }else{
+                var packaging = "no";
+            }
+            
+            if (checkBox8.checked == true){   
+                var signage = $("#signagem").val();
+            }else{
+                var signage = "no";
+            }
+            
+            if (checkBox9.checked == true){   
+                var namingSystems = $("#namingSystemsm").val();
+            }else{
+                var namingSystems = "no";
+            }
+            
+            /*Graphic Design*/
+            if (checkBox10.checked == true){   
+                var advertisement = $("#advertisementm").val();
+            }else{
+                var advertisement = "no";
+            }
+            
+            if (checkBox11.checked == true){   
+                var presentation = $("#presentationm").val();
+            }else{
+                var presentation = "no";
+            }
+            
+            if (checkBox12.checked == true){   
+                var catalog = $("#catalogm").val();
+            }else{
+                var catalog = "no";
+            }
+            
+            if (checkBox13.checked == true){   
+                var infographic = $("#infographicm").val();
+            }else{
+                var infographic = "no";
+            }
+            
+            if (checkBox14.checked == true){   
+                var illustration = $("#illustrationm").val();
+            }else{
+                var illustration = "no";
+            }
+            
+            if (checkBox15.checked == true){   
+                var iconography = $("#iconographym").val();
+            }else{
+                var iconography = "no";
+            }
+            
+            if (checkBox16.checked == true){   
+                var photoManipulation = $("#photoManipulationm").val();
+            }else{
+                var photoManipulation = "no";
+            }
+            
+            /*Web Design*/
+            if (checkBox17.checked == true){   
+                var UIDesign = $("#UIDesignm").val();
+            }else{
+                var UIDesign = "no";
+            }
+            
+            if (checkBox18.checked == true){   
+                var UXDesign = $("#UXDesignm").val();
+            }else{
+                var UXDesign = "no";
+            }
+            
+            if (checkBox19.checked == true){   
+                var frontEnd = $("#frontEndm").val();
+            }else{
+                var frontEnd = "no";
+            }
+            
+
+            var data = {
+                Name: name,
+                Phone: phone,
+                Email: email,
+                Company: comp,
+                Tax: tax,
+                Brand: brand,
+                Industry: industry,
+                Countr: country,
+                Description: desc,
+                Start: start,
+                Delivery: delivery,
+                /**/
+                Naming: naming,
+                NewBrand: newBrand,
+                Rebrand: Rebrand,
+                BrandApplications: brandApplications,
+                BrandBook: brandBook,
+                SocialMedia: socialMedia,
+                Packaging: packaging,
+                Signage: signage,
+                NamingSystems: namingSystems,
+                /**/
+                Advertisement: advertisement,
+                Presentation: presentation,
+                Catalog: catalog,
+                Infographic: infographic,
+                Illustration: illustration,
+                Iconography: iconography,
+                PhotoManipulation: photoManipulation,
+                /**/
+                UIDesign: UIDesign,
+                UXDesign: UXDesign,
+                FrontEnd: frontEnd
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "https://743e8ndpef.execute-api.us-east-1.amazonaws.com/ProjectTBE",
+                dataType: "json",
+                crossDomain: "true",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+
+
+
+                //creo que aqui va lo del check de la respuesta del endpoint
+                success: function () {
+                    // clear form and show a success message
+                    alert("Thanks for contacting us. We will get in touch with you as soon as possible.");
+                    document.getElementById("contact-form").reset();
+                    location.reload();
+                },
+                error: function () {
+                    // show an error message
+                    alert("Thanks for contacting us. We will get in touch with you as soon as possible");
+                    document.getElementById("contact-form").reset();
+                    location.reload();
+                }
+            });
+        }
+    </script>
+    <!--Fin AWS-->
+
+
+
+
+</head>
+
+<body>
+    <div class="hide-on-mobile-tablet">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html"><img src="images/tbeLogobebe.svg"></a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollLink" style="color: #FF4E00;" href="#info">New Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://wa.me/12122030151" target="_blank"><img src="images/waza.svg" alt="wasa"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/tbe_agency/" target="_blank"><img src="images/insta.svg" alt="Instagram"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section id="info" class="info">
+            <div class="main_section">
+                <hr class="linea_hr">
+                <div class=" row">
+                    <p class=" col-6 iStTxt">• Get in touch</p>
+                    <p class=" col-6 iNtTxt">A small step for man<br>A gigant leap for your startup</p>
+                </div>
+                <div class="row">
+                    <div class="col-8 formulario">
+                        <form class="contacto" method="post" id="contact-form">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">First Name <span class="espan">/
+                                                Nombre</span></label>
+                                        <input type="text" class="form-control" id="fname" placeholder="Noah"
+                                            name="fname" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Last Name <span class="espan">/
+                                                Apellido</span></label>
+                                        <input type="text" class="form-control" id="lname" placeholder="Smith"
+                                            name="lname" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Email <span class="espan">/
+                                                Correo</span></label>
+                                        <input type="text" class="form-control" id="email"
+                                            placeholder="email@example.com" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Cell Phone <span class="espan">/
+                                                Celular</span></label>
+                                        <input type="text" class="form-control" id="phone" placeholder="3333333333"
+                                            name="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Company <span class="espan">/
+                                                Empresa</span></label>
+                                        <input type="text" class="form-control" id="companyt" placeholder="Example"
+                                            name="company" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Tax ID <span class="espan">/
+                                                RFC</span></label>
+                                        <input type="text" class="form-control" id="tax" placeholder="Example"
+                                            name="tax" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Brand <span class="espan">/
+                                                Marca</span></label>
+                                        <input type="text" class="form-control" id="brand" placeholder="Example"
+                                            name="brand" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Industry <span class="espan">/
+                                                Industria</span></label>
+                                        <input type="text" class="form-control" id="industry" placeholder="Example"
+                                            name="industry" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Country <span class="espan">/
+                                                País</span></label>
+                                        <input type="text" class="form-control" id="country" placeholder="USA"
+                                            name="country" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Tell us a little about what you need <span
+                                                class="espan">/ Tus requerimientos</span></label>
+                                        <textarea class="form-control" id="texto" rows="4"
+                                            placeholder="How can we help you?" name="texto" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Start Date <span class="espan">/ Fecha de
+                                                inicio</span></label>
+                                        <input type="date" class="form-control" style="font-size: 2.2vh;" id="start"
+                                            name="start" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Delivery Date <span class="espan">/ Fecha de
+                                                entrega</span></label>
+                                        <input type="date" class="form-control" style="font-size: 2.2vh;" id="delivery" placeholder="10/02/2022"
+                                            name="delivery" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group serv-req">
+                                        <label for="formGroupExampleInput">Service/s Required <span class="espan">/
+                                                Servicio/s Requeridos</span></label>
+                                        <div class="row cbxes">
+                                            <div class="col-4">
+                                                <label class="BGW">Branding</label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="naming" name="naming" value="Yes">
+                                                    <span class="geekmark"></span>Naming
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="newBrand" name="newBrand"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>New Brand
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="Rebrand" name="Rebrand" value="Yes">
+                                                    <span class="geekmark"></span>Rebrand
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="brandApplications"
+                                                        name="brandApplications" value="Yes">
+                                                    <span class="geekmark"></span>Brand Applications
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="brandBook" name="brandBook"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>Brand Book / Visual Identity
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="socialMedia" name="socialMedia"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>Social Media Assets
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="packaging" name="packaging"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>Packaging
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="signage" name="signage" value="Yes">
+                                                    <span class="geekmark"></span>Signage
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="namingSystems" name="namingSystems"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>Naming Systems
+                                                </label>
+                                            </div>
+                                            <div class="col-4">
+                                                <label class="BGW">Graphic Design</label>
+
+                                                <label class="main">
+                                                    <input type="checkbox" id="advertisement" name="advertisement"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>Advertisement
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="presentation" name="presentation"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>Presentation
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="catalog" name="catalog" value="Yes">
+                                                    <span class="geekmark"></span>Catalog
+                                                </label>
+                                                <label class="main">
+                                              <input type="checkbox" id="infographic" name="infographic"
+                                                  value="Yes">
+                                              <span class="geekmark"></span>Infographic
+                                          </label>
+                                          <label class="main">
+                                              <input type="checkbox" id="illustration" name="illustration"
+                                                  value="Yes">
+                                              <span class="geekmark"></span>Illustration
+                                          </label>
+                                          <label class="main">
+                                              <input type="checkbox" id="iconography" name="iconography"
+                                                  value="Yes">
+                                              <span class="geekmark"></span>Iconography
+                                          </label>
+                                          <label class="main">
+                                              <input type="checkbox" id="photoManipulation"
+                                                  name="photoManipulation" value="Yes">
+                                              <span class="geekmark"></span>PhotoManipulation
+                                                </label>
+
+                                            </div>
+                                            <div class="col-4">
+                                                <label class="BGW">Web Design & Development</label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="UIDesign" name="UIDesign"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>UI Design
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="UXDesign" name="UXDesign"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>UX Design
+                                                </label>
+                                                <label class="main">
+                                                    <input type="checkbox" id="frontEnd" name="frontEnd"
+                                                        value="Yes">
+                                                    <span class="geekmark"></span>Front End Development
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <button onClick="submitToAPI(event)" type="submit" class="">Submit <img
+                                            src="images/arrow.svg"></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-4 imgForm">
+                        <img src="images/lets.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="row">
+                <div class="col-6">
+                    <img src="images/thebrandhorz.svg">
+                </div>
+                <p class="col-6 ftxt">Beta Version &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> theBrandingExperts. All Right Reserved
+                </p>
+            </div>
+        </footer>
+
+    </div>
+    <div class="hide-on-desktop">
+        <nav class="navbar">
+            <a class="" href="index.html"><img src="images/tbeLogobebe.svg"></a>
+            <div class="social">
+                <a class="" href="info.html">Info</a>
+                <a class="" style="color: #FF4E00;" href="info.html">New Project</a>
+                <a href="https://wa.me/12122030151" target="_blank"><img src="images/waza.svg" alt="wasa"></a>
+                <a href="https://www.instagram.com/tbe_agency/" target="_blank"><img src="images/insta.svg"
+                        alt="Instagram"></a>
+            </div>
+        </nav>
+        <section id="info" class="info">
+            <div class="main_section">
+                <hr>
+                <p class="iStTxt">• Get in touch</p>
+            </div>
+            <form class="contacto" method="post" id="contact-form">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">First Name <span class="espan">/
+                            Nombre</span></label>
+                    <input type="text" class="form-control" id="fnamem" placeholder="Noah" name="fnamem" required>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Last Name <span class="espan">/
+                                Apellido</span></label>
+                        <input type="text" class="form-control" id="lnamem" placeholder="Smith" name="lnamem" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Email <span class="espan">/
+                                Correo</span></label>
+                        <input type="text" class="form-control" id="emailm" placeholder="email@example.com"
+                            name="emailm" required>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Cell Phone <span class="espan">/
+                                    Celular</span></label>
+                            <input type="text" class="form-control" id="phonem" placeholder="3333333333" name="phonem"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Company <span class="espan">/
+                                Empresa</span></label>
+                        <input type="text" class="form-control" id="companym" placeholder="Example" name="companym"
+                            required>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Tax ID <span class="espan">/
+                                    RFC</span></label>
+                            <input type="text" class="form-control" id="taxm" placeholder="Example" name="taxm"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Brand <span class="espan">/
+                                Marca</span></label>
+                        <input type="text" class="form-control" id="brandm" placeholder="Example" name="brandm"
+                            required>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Industry <span class="espan">/
+                                    Industria</span></label>
+                            <input type="text" class="form-control" id="industrym" placeholder="Example"
+                                name="industrym" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Country <span class="espan">/
+                                País</span></label>
+                        <input type="text" class="form-control" id="countrym" placeholder="USA" name="countrym"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Tell us a little about what you need <span class="espan">/
+                                Tus requerimientos</span></label>
+                        <textarea class="form-control" id="textom" rows="4" placeholder="How can we help you?"
+                            name="textom" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Start Date <span class="espan">/ Fecha de
+                                inicio</span></label>
+                        <input type="date" class="form-control" id="startm" placeholder="10/02/2022" name="startm"
+                            required>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Delivery Date <span class="espan">/ Fecha de
+                                    entrega</span></label>
+                            <input type="date" class="form-control" id="deliverym" placeholder="10/02/2022"
+                                name="deliverym" required>
+                        </div>
+                    </div>
+                    <div class="form-group serv-req">
+                        <label for="formGroupExampleInput">Service/s Required <span class="espan">/
+                                Servicio/s Requeridos</span></label><br>
+                        <div class="cbxes">
+                            <div class="col-12">
+                                <label class="cbtitle">Branding</label><br>
+
+                                <label class="main">
+                                    <input type="checkbox" id="namingm" name="namingm" value="Yes">
+                                    <span class="geekmark"></span>Naming
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="newBrandm" name="newBrandm" value="Yes">
+                                    <span class="geekmark"></span>New Brand
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="Rebrandm" name="Rebrandm" value="Yes">
+                                    <span class="geekmark"></span>Rebrand
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="brandApplicationsm" name="brandApplicationsm"
+                                        value="Yes">
+                                    <span class="geekmark"></span>Brand Applications
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="brandBookm" name="brandBookm" value="Yes">
+                                    <span class="geekmark"></span>Brand Book / Visual Identity
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="socialMediam" name="socialMediam" value="Yes">
+                                    <span class="geekmark"></span>Social Media Assets
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="packagingm" name="packagingm" value="Yes">
+                                    <span class="geekmark"></span>Packaging
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="signagem" name="signagem" value="Yes">
+                                    <span class="geekmark"></span>Signage
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="namingSystemsm" name="namingSystemsm"
+                                        value="Yes">
+                                    <span class="geekmark"></span>Naming Systems
+                                </label>
+                            </div>
+                        </div>
+                        <div class="cbxes">
+                            <div class="col-12">
+                                <label class="cbtitle">Graphic Design</label><br>
+
+                                <label class="main">
+                                    <input type="checkbox" id="advertisementm" name="advertisementm"
+                                        value="Yes">
+                                    <span class="geekmark"></span>Advertisement
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="presentationm" name="presentationm" value="Yes">
+                                    <span class="geekmark"></span>Presentation
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="catalogm" name="catalogm" value="Yes">
+                                    <span class="geekmark"></span>Catalog
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="infographicm" name="infographicm" value="Yes">
+                                    <span class="geekmark"></span>Infographic
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="illustrationm" name="illustrationm" value="Yes">
+                                    <span class="geekmark"></span>Illustration
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="iconographym" name="iconographym" value="Yes">
+                                    <span class="geekmark"></span>Iconography
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="photoManipulationm" name="photoManipulationm"
+                                        value="Yes">
+                                    <span class="geekmark"></span>PhotoManipulation
+                                </label>
+                            </div>
+                        </div>
+                        <div class="cbxes">
+                            <div class="col-12">
+                                <label class="cbtitle">Web Design & Development</label><br>
+                                <label class="main">
+                                    <input type="checkbox" id="UIDesignm" name="UIDesignm" value="Yes">
+                                    <span class="geekmark"></span>UI Design
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="UXDesignm" name="UXDesignm" value="Yes">
+                                    <span class="geekmark"></span>UX Design
+                                </label>
+                                <label class="main">
+                                    <input type="checkbox" id="frontEndm" name="frontEndm" value="Yes">
+                                    <span class="geekmark"></span>Front End Development
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <button onClick="submitToAPIm(event)" type="submit" class="">Submit <img
+                                src="images/arrow.svg"></button>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+        <footer>
+            <div class="">
+                <img src="images/thebrandhorz.svg">
+            </div>
+            <p class=" ftxt">Beta Version<br>&copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> theBrandingExperts. All Right Reserved
+            </p>
+        </footer>
+    </div>
+</body>
+
+<!--Scroll chido-->
+<script>
+    $(document).ready(function () {
+        $("a.scrollLink").click(function (event) {
+            event.preventDefault();
+            $("html, body").animate({
+                scrollTop: $($(this).attr("href")).offset().top
+            }, 500);
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,473 @@
+/*Movil y Escritorio*/
+@media only screen and (max-width: 1030px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1031px) {
+    .hide-on-desktop {
+        display: none;
+    }
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /*Regular*/
+}
+
+/*Navbar*/
+.navbar {
+    padding-right: 5vw;
+    padding-left: 5vw;
+    position: fixed;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+}
+
+.navbar img {
+    height: 1.5rem;
+}
+
+.navbar-brand {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: 0 18px;
+    position: relative;
+    right: 0;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.671);
+    /*color: #FB4D00*/
+}
+
+.blur{
+    filter: blur(4px);
+    position: fixed;
+    width: 100vw;
+    height: 20vh;
+}
+
+/* Fin Navbar*/
+/*footer*/
+footer {
+    background-color: black;
+}
+
+footer img {
+    text-align: left;
+    height: 4vh;
+    margin: 5% 10%;
+}
+
+footer .row {
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0;
+
+}
+
+.ftxt {
+    text-align: right;
+    padding-right: 5%;
+    margin-top: 3%;
+    color: white;
+    font-size: 1.8vh;
+}
+
+/*fin footer*/
+/*Index Page*/
+/*Inicio*/
+.inicio {
+    padding-bottom: 0;
+    background: rgb(251, 77, 0);
+    background: linear-gradient(180deg, rgba(251, 77, 0, 1) 0%, rgba(108, 34, 5, 1) 100%);
+    background-repeat: no-repeat;
+
+}
+
+.main_section {
+    bottom: 0;
+    padding: 15% 5%;
+    padding-bottom: 0%;
+}
+
+.main_section img {
+    height: 25vh;
+}
+
+.logoinicio {
+    margin-top: 10vh;
+}
+
+.linea_hr {
+    margin-top: 4vh;
+    border-top: 1px solid rgb(255, 255, 255);
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 4vh;
+    position: relative;
+}
+
+.sttext {
+    padding-top: 2%;
+    padding-bottom: 0;
+}
+
+.ndtext {
+    text-align: right;
+    right: 0;
+    padding-top: 6%;
+    padding-bottom: 3%;
+}
+
+.sttext, .ndtext{
+    font-weight: 600;
+}
+
+/*Fin Inicio*/
+/*Fin Index Page*/
+/*Info page*/
+.info {
+    padding-bottom: 0;
+    background: linear-gradient(0deg, #FF4E00 0%, rgb(0, 0, 0) 100%);
+    background-repeat: no-repeat;
+}
+
+.info .main_section {
+    padding-top: 5%;
+}
+
+.iStTxt {
+    padding-top: 0%;
+    padding-bottom: 0;
+    color: white;
+}
+
+.iNtTxt {
+    color: white;
+    text-align: right;
+    right: 0;
+    padding-top: 0%;
+}
+
+.iStTxt, .iNtTxt{
+    font-weight: 300;
+}
+
+.imgForm {
+    text-align: center;
+    margin-top: 5%;
+    overflow: hidden;
+}
+
+.imgForm img{
+    height: max-content;
+}
+
+
+.formulario {
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.contacto {
+    margin-bottom: 5%;
+    color: white;
+}
+
+.contacto label {
+    padding-bottom: 0;
+    display: block;
+    font-size: 1vw;
+}
+
+.BGW{
+    padding-bottom: 10px !important;
+    padding-top: 10px;
+}
+
+.contacto span {
+    font-size: 2vh;
+    padding-left: 0%;
+}
+
+.contacto button {
+    width: 15vw;
+    background: transparent;
+    border: 1px solid transparent;
+    color: white;
+    transition: 0.5s;
+    text-align: left;
+    margin-top: 3vh;
+}
+
+.contacto button:hover, .contacto button:focus {
+    background: transparent;
+    border: 1px solid transparent;
+    color: black;
+    transition: 0.5s;
+}
+
+.contacto img {
+    height: 2%;
+    margin-left: 10%;
+}
+
+.form-group {
+    padding: 10px 0;
+}
+
+.espan {
+    color: #B9B8B8;
+}
+
+.cbxes .col-4 {
+    padding: 0;
+}
+
+.cbxes label {
+    padding-left: 5%;
+}
+
+.cbxes .main {
+    padding-left: 0;
+}
+
+.contacto input, .contacto textarea, .contacto input:focus, .contacto textarea:focus {
+    background-color: rgba(255, 255, 255, 0.43);
+    resize: none;
+    border-radius: 0;
+    border: transparent;
+    font-size: 2.5vh;
+    color: white;
+}
+
+.contacto ::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2vh;
+}
+
+
+
+/*Checkbox customizada*/
+
+
+/* Hide the default checkbox */
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* Creating a custom checkbox
+        based on demand */
+.geekmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 100%;
+    font-size: 0rem !important;
+    /*Ancho*/
+    padding-left: 1vh !important;
+    padding-top: 1vh;
+    margin-right: 1rem;
+    z-index: 1;
+}
+
+
+/* Specify the background color to be
+        shown when checkbox is active */
+.main input:active~.geekmark {
+    background-color: transparent;
+}
+
+/* Specify the background color to be
+        shown when checkbox is checked */
+.main input:checked~.geekmark {
+    background-color: transparent;
+}
+
+/* Checkmark to be shown in checkbox */
+/* It is not be shown when not checked */
+.geekmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Display checkmark when checked */
+.main input:checked~.geekmark:after {
+    display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and 
+        showing only two border to make it look
+        like a tickmark */
+.main .geekmark:after {
+    left: 0rem;
+    bottom: 0rem;
+    width: 1vh;
+    height: 1vh;
+    border: solid rgb(255, 255, 255);
+    background-color: white;
+    border-radius: 100%;
+}
+
+/*Fin Checkbox customizada*/
+/*Fin Info page*/
+/*Movil**********************************************************************************************************/
+/*Movil**********************************************************************************************************/
+@media only screen and (max-width: 1030px) {
+    body {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    .navbar {
+        padding: 5%;
+        width: 100vw;
+        flex-wrap: nowrap;
+    }
+
+    .navbar a {
+        color: white;
+        font-size: 2vh;
+    }
+
+    .navbar img {
+        height: 3vh;
+        padding-left: 0%;
+    }
+
+    .social {
+        text-align: right;
+        width: 90%;
+    }
+
+    .social a {
+        padding-right: 5%;
+    }
+
+    .inicio img {
+        width: 80vw;
+    }
+
+    .inicio p {
+        font-size: 4vh;
+        color: white;
+        padding: 2%;
+        padding-bottom: 5%;
+    }
+
+    .primerom {
+        text-align: left;
+    }
+
+    .segundom {
+        text-align: right;
+        margin-bottom: 0;
+    }
+
+    footer img {
+        width: 80vw;
+    }
+
+    .ftxt {
+        text-align: center;
+        margin-bottom: 0;
+        padding-bottom: 5%;
+        padding-right: 0;
+    }
+
+
+    .main_section hr {
+        height: 5px;
+        color: white;
+        opacity: 1;
+    }
+
+    .iStTxt {
+        font-size: 2.5vh;
+    }
+
+    .contacto {
+        padding: 5%;
+        margin-bottom: 0;
+    }
+
+    .contacto label {
+        font-size: 2vh;
+        padding-top: 3%;
+        padding-bottom: 1%;
+    }
+
+    .contacto input{
+        height: 7vh;
+
+    }
+
+    .info {
+        padding-top: 10vh;
+    }
+
+    .cbxes label{
+        font-size: 2vh;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .cbxes .col-12{
+        margin-bottom: 10%;
+    }
+
+    .cbtitle{
+        font-size: 2.5vh !important;
+        padding-top: 5% !important;
+        padding-bottom: 0;
+    }
+
+    .contacto button{
+        width: 80vw;
+        padding-left: 5%;
+        font-size: 3vh;
+        color: white;
+    }
+
+    .contacto img{
+        height: 5vh;
+    }
+
+    .contacto hr{
+        height: 0.5vh;
+        opacity: 1;
+    }
+}
